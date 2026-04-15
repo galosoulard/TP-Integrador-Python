@@ -1,2 +1,3 @@
 raw_datasets/*
 !raw_datasets/.gitkeep
+__pycache__/
