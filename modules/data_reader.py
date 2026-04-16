@@ -37,3 +37,25 @@ def get_column_names(file_path, file_delimiter):
         headers = next(reader)
         
         return headers
+    
+
+
+def get_column_indices(file_path, file_delimiter):
+    """
+    Retorna un diccionario con el nombre de cada columna como clave
+    y su posición como valor.
+
+    Args:
+        file_path (Path/str): La ruta del archivo a trabajar.
+        file_delimiter (str): El caracter que separa las columnas.
+    """
+
+    #Traemos la lista de columnas y creamos el diccionario vacío column_indices
+    headers = get_column_names(file_path, file_delimiter)
+    column_indices = {}
+
+    #Recorremos la lista, guardando el índice como valor y el nombre como clave
+    for index, column_name in enumerate(headers):
+        column_indices[column_name] = index
+    
+    return column_indices
